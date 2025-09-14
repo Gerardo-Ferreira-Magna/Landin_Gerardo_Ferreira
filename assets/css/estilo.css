@@ -1,0 +1,384 @@
+
+
+    body {
+      background-color: #222831;
+      color: #ffffff;
+    }
+
+    .navbar {
+      background-color: #FF9A00 !important;
+    }
+
+    .btn-primary {
+      background-color: #00adb5;
+      border-color: #00adb5;
+    }
+
+    .btn-primary:hover {
+      background-color: #009ca6;
+      border-color: #009ca6;
+    }
+
+    /* Animaciones */
+    .slide-in-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideIn 1s forwards;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+    }
+
+    .social-icons a {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .social-icons a:nth-child(1) { animation-delay: 1.2s; }
+    .social-icons a:nth-child(2) { animation-delay: 1.4s; }
+    .social-icons a:nth-child(3) { animation-delay: 1.6s; }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Opcional: iconos sociales hover */
+    .social-icons a i {
+      color: #eeeeee;
+      transition: color 0.3s;
+    }
+
+    .social-icons a i:hover {
+      color: aqua;
+    }
+
+ .home img {
+  border-radius: 15px; /* bordes redondeados normales */
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  display: inline-block;
+}
+
+.home img:hover {
+  transform: scale(1.05);    /* leve zoom al pasar el mouse */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* sombra más marcada */
+  
+}
+
+
+/* ===========================
+   Sección Habilidades
+=========================== */
+
+#navbarNav {
+      background-color: #FF9A00 !important;
+    }
+
+.habilidades {
+  background-color: #222831;
+  min-height: 100vh;            /* ocupar todo el alto de la pantalla */
+  display: flex;
+  align-items: center;          /* centrar verticalmente */
+  padding: 100px 0 60px;        /* espacio para no chocar con el navbar fijo */
+}
+
+.habilidades h2 {
+  color: aqua;
+  font-weight: bold;
+}
+
+.habilidades p, 
+.habilidades ul li {
+  color: #eeeeee;
+}
+
+.habilidades ul li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+/* ===========================
+   Collage creativo con grid + tarjetas
+=========================== */
+.collage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
+  gap: 25px;
+  justify-items: center;
+  align-items: center;
+}
+
+.collage-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #393e46;
+  border-radius: 12px;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.collage-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Hover: se enderezan */
+.collage-item:hover {
+  transform: scale(1.1) rotate(0deg);
+  box-shadow: 0 8px 20px rgba(0, 173, 181, 0.7);
+}
+
+/* Rotaciones creativas */
+.rotate-left { transform: rotate(-8deg); }
+.rotate-right { transform: rotate(-8deg); }
+.rotate-small { transform: rotate(3deg); }
+
+/* ===========================
+   Responsivo
+=========================== */
+@media (max-width: 768px) {
+  .habilidades {
+    padding-top: 120px;   /* espacio extra bajo navbar */
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .collage {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets/móviles */
+  }
+
+  .collage-item img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+
+/* ===== Sección Logros ===== */
+.logros {
+  min-height: 100vh;
+  background: #222831;
+  padding-top: 80px; /* espacio para el navbar fijo */
+}
+
+.logro-card {
+  border-left: 6px solid #00adb5;
+  border-radius: 12px;
+  background: #393e46;
+  color: #eeeeee;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logro-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+
+/* ===== Sección Gustos ===== */
+.gustos {
+  min-height: 100vh;
+  background: #222831;
+  padding-top: 90px; /* espacio para navbar fijo */
+}
+
+/* Grid de collage */
+.gustos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Estilo tipo Polaroid */
+.gustos-item {
+  position: relative;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gustos-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Pie de foto estilo polaroid */
+.gustos-item .caption {
+  display: block;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #222831;
+}
+
+/* Hover */
+.gustos-item:hover {
+  transform: scale(1.08) rotate(0deg);
+  box-shadow: 0 15px 35px rgba(0, 173, 181, 0.7);
+}
+
+/* Rotaciones */
+.rotate-left { transform: rotate(-7deg); }
+.rotate-right { transform: rotate(6deg); }
+.rotate-small { transform: rotate(3deg); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gustos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================*/
+
+/* Animaciones */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Estados iniciales (ocultos) */
+.hidden {
+  opacity: 0;
+}
+
+/* Cuando se activa con JS */
+.animate-left {
+  animation: slideInLeft 1s ease forwards;
+}
+
+.animate-right {
+  animation: slideInRight 1s ease forwards;
+}
+
+
+.navbar .nav-link {
+  position: relative;
+  color: #222831;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #222831;
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #222831;
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%; /* subrayado se expande */
+}
+
+/* Estilo del link activo */
+.navbar .nav-link.active {
+  color: #222831;          /* color destacado */
+  font-weight: bold;        /* negrita */
+  border-radius: 1px solid #222831; /* subrayado */
+  transition: all 0.3s ease;
+}
+
+/* Hover sobre los demás links */
+.navbar .nav-link:not(.active):hover {
+  color: #222831;
+}
+
+
+/* Definimos la animación de la ola  en el correo*/
+@keyframes wave-animation {
+  0%, 100% {
+    transform: translateY(0); /* Posición inicial y final */
+  }
+  50% {
+    transform: translateY(-8px); /* Punto más alto de la ola */
+  }
+}
+
+/* Estilos base para el contenedor */
+.navbar-brand {
+  text-decoration: none;
+  color: white; /* Color del texto */
+  font-size: 1.5rem; /* Tamaño del texto */
+}
+
+/* Aplicamos la animación a cada letra */
+.navbar-brand .letter {
+  display: inline-block; /* Crucial para animar cada letra */
+  animation: wave-animation 2s infinite ease-in-out; /* Aplica la animación */
+}
+
+/* Retraso para crear el efecto de ola */
+.navbar-brand .letter:nth-child(2) { animation-delay: 0.05s; }
+.navbar-brand .letter:nth-child(3) { animation-delay: 0.1s; }
+.navbar-brand .letter:nth-child(4) { animation-delay: 0.15s; }
+.navbar-brand .letter:nth-child(5) { animation-delay: 0.2s; }
+.navbar-brand .letter:nth-child(6) { animation-delay: 0.25s; }
+.navbar-brand .letter:nth-child(7) { animation-delay: 0.3s; }
+.navbar-brand .letter:nth-child(8) { animation-delay: 0.35s; }
+.navbar-brand .letter:nth-child(9) { animation-delay: 0.4s; }
+.navbar-brand .letter:nth-child(10) { animation-delay: 0.45s; }
+.navbar-brand .letter:nth-child(11) { animation-delay: 0.5s; }
+.navbar-brand .letter:nth-child(12) { animation-delay: 0.55s; }
+.navbar-brand .letter:nth-child(13) { animation-delay: 0.6s; }
+.navbar-brand .letter:nth-child(14) { animation-delay: 0.65s; }
+.navbar-brand .letter:nth-child(15) { animation-delay: 0.7s; }
+.navbar-brand .letter:nth-child(16) { animation-delay: 0.75s; }
+.navbar-brand .letter:nth-child(17) { animation-delay: 0.8s; }
+.navbar-brand .letter:nth-child(18) { animation-delay: 0.85s; }
+.navbar-brand .letter:nth-child(19) { animation-delay: 0.9s; }
+.navbar-brand .letter:nth-child(20) { animation-delay: 0.95s; }
+.navbar-brand .letter:nth-child(21) { animation-delay: 1s; }
+.navbar-brand .letter:nth-child(22) { animation-delay: 1.05s; }
+.navbar-brand .letter:nth-child(23) { animation-delay: 1.1s; }
+.navbar-brand .letter:nth-child(24) { animation-delay: 1.15s; }
